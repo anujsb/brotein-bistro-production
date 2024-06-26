@@ -21,7 +21,7 @@ const MealRecordDetails = () => {
 
   const fetchDetailsAndMealRecords = async () => {
     try {
-      const response = await axios.get(`/api/active/subs/${id}`);
+      const response = await axios.get(`https://brotein-bistro-01am.onrender.com/api/active/subs/${id}`);
       setSubscriptionDetails(response.data);
       setMeals(response.data.mealsTaken);
     } catch (error) {
@@ -35,7 +35,7 @@ const MealRecordDetails = () => {
 
   const handleUpdate = async (field, value) => {
     try {
-      await axios.patch(`/api/active/subs/${id}`, {
+      await axios.patch(`https://brotein-bistro-01am.onrender.com/api/active/subs/${id}`, {
         [field]: value,
       });
       fetchDetailsAndMealRecords();
@@ -46,7 +46,7 @@ const MealRecordDetails = () => {
 
   const handleDeleteMeal = async (mealRecordId) => {
     try {
-      await axios.post("/api/active/subs/deleteMeal/", {
+      await axios.post("https://brotein-bistro-01am.onrender.com/api/active/subs/deleteMeal/", {
         username: subscriptionDetails.username,
         mealRecordId,
       });

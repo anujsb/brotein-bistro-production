@@ -13,7 +13,7 @@ const GetMeal = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/api/active/subs/recordMeal", {
+      const response = await axios.post("https://brotein-bistro-01am.onrender.com/api/active/subs/recordMeal", {
         username,
         selectedPlan,
         date,

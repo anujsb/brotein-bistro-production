@@ -10,7 +10,7 @@ function FeedbackFormResponse() {
   useEffect(() => {
     const fetchFeedbackResponses = async () => {
       try {
-        const response = await axios.get("/api/feedback/readAll/feedback");
+        const response = await axios.get("https://brotein-bistro-01am.onrender.com/api/feedback/readAll/feedback");
         setFeedbackResponses(response.data);
       } catch (error) {
         console.error("Error fetching feedback responses:", error);
@@ -32,7 +32,7 @@ function FeedbackFormResponse() {
 
   const handleDeleteFeedback = async (feedbackId) => {
     try {
-      await axios.delete(`/api/feedback/delete/feedback/${feedbackId}`);
+      await axios.delete(`https://brotein-bistro-01am.onrender.com/api/feedback/delete/feedback/${feedbackId}`);
       setFeedbackResponses(
         feedbackResponses.filter((feedback) => feedback._id !== feedbackId)
       );

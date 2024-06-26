@@ -6,7 +6,7 @@ const Events = () => {
 
   useEffect(() => {
     // Replace '/api/getAllevents' with the actual API endpoint
-    fetch("/api/events/getAllevents")
+    fetch("https://brotein-bistro-01am.onrender.com/api/events/getAllevents")
       .then((response) => response.json())
       .then((data) => setEvents(data));
   }, []);

@@ -10,7 +10,7 @@ function SubscriptionseRequests() {
   useEffect(() => {
     const fetchSubscriptions = async () => {
       try {
-        const response = await axios.get("/api/subs/subscriptions");
+        const response = await axios.get("https://brotein-bistro-01am.onrender.com/api/subs/subscriptions");
         setSubscriptions(response.data);
       } catch (error) {
         console.error("Error fetching subscriptions:", error);
@@ -48,7 +48,7 @@ function SubscriptionseRequests() {
         userId,
       } = subscription;
 
-      const response = await axios.put(`/api/active/subs/approve/${id}`, {
+      const response = await axios.put(`https://brotein-bistro-01am.onrender.com/api/active/subs/approve/${id}`, {
         phoneNumber,
         address,
         selectedPlan,
@@ -66,7 +66,7 @@ function SubscriptionseRequests() {
 
   const handleDecline = async (id) => {
     try {
-      await axios.delete(`/api/subs/subscriptions/${id}`);
+      await axios.delete(`https://brotein-bistro-01am.onrender.com/api/subs/subscriptions/${id}`);
       console.log(`Subscription with ID: ${id} declined successfully.`);
       setSubscriptions((prevSubscriptions) =>
         prevSubscriptions.filter((sub) => sub._id !== id)
