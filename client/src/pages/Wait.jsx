@@ -23,7 +23,7 @@ const Wait = () => {
   //     }
   //   };
   return (
-    <div className="flex flex-col justify-center items-center p-20 bg-login h-screen ">
+    <div className="flex flex-col justify-center items-center  bg-login h-screen ">
       <div className=" flex flex-col justify-center items-center border p-3 rounded-xl backdrop-blur-2xl shadow-md w-fit ">
         <h1 className="text-center p-2 text-2xl capitalize">
           Hang on a sec... <br />
