@@ -43,7 +43,7 @@ const SideBarClient = () => {
 
   return (
     <nav
-      className={`md:h-screen lg:h-screen sm:h-min sm:w-full md:w-fit lg:w-fit transition-all duration-300 flex md:flex-col lg:flex-col sm:flex-row sticky  left-0 top-0 p-2  pt-24 rounded-sm shadow-sm border bg-white ${
+      className={`md:h-screen lg:h-screen sm:h-min sm:w-full md:w-fit lg:w-fit transition-all duration-300 flex md:flex-col lg:flex-col sm:flex-row sticky  left-0 top-0 p-2  lg:pt-24 md:pt-24 sm:pt-14 rounded-sm shadow-sm border bg-white ${
         expanded ? "sm:w-full md:w-56 lg:w-52" : ""
       }`}
     >

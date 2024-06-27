@@ -12,7 +12,7 @@ const Events = () => {
             ᴀᴛ ʙʀᴏᴛᴇɪɴ ʙɪꜱᴛʀᴏ, ᴡᴇ’ʀᴇ ᴏɴ ᴀ ᴍɪꜱꜱɪᴏɴ ᴛᴏ ᴍᴀᴋᴇ ʜᴇᴀʟᴛʜ ᴀɴᴅ ꜰɪᴛɴᴇꜱꜱ
             ᴀᴄᴄᴇꜱꜱɪʙʟᴇ, ᴇɴᴊᴏʏᴀʙʟᴇ, ᴀɴᴅ ᴅᴇʟɪᴄɪᴏᴜꜱ.
           </p>
-          <div className="p-20 rounded-xl">
+          <div className="lg:p-20 md:p-20 sm:p-7 rounded-xl">
             <img className="rounded-lg" alt="event" src="/know.png" />
           </div>
         </div>

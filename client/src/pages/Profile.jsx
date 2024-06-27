@@ -63,13 +63,16 @@ export default function Profile() {
     e.preventDefault();
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`https://brotein-bistro-01am.onrender.com/api/user/update/${currentUser._id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `https://brotein-bistro-01am.onrender.com/api/user/update/${currentUser._id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         dispatch(updateUserFailure(data));
@@ -85,9 +88,12 @@ export default function Profile() {
   const handleDeleteAccount = async () => {
     try {
       dispatch(deleteUserStart());
-      const res = await fetch(`https://brotein-bistro-01am.onrender.com/api/user/delete/${currentUser._id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://brotein-bistro-01am.onrender.com/api/user/delete/${currentUser._id}`,
+        {
+          method: "DELETE",
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         dispatch(deleteUserFailure(data));
@@ -176,11 +182,14 @@ export default function Profile() {
         <div className="flex justify-between mt-5">
           <span
             onClick={handleDeleteAccount}
-            className="text-red-700 cursor-pointer button"
+            className="text-red-700 cursor-pointer button mx-2"
           >
             Delete Account
           </span>
-          <span onClick={handleSignOut} className="text-red-700 cursor-pointer button">
+          <span
+            onClick={handleSignOut}
+            className="text-red-700 cursor-pointer button mx-2"
+          >
             Sign out
           </span>
         </div>
