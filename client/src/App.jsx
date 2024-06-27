@@ -1,5 +1,11 @@
-// App.jsx
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import SubscriptionseRequests from "./pages/SubscriptionseRequests";
@@ -27,11 +33,22 @@ import Wait from "./pages/Wait";
 import Events from "./pages/Events";
 import KnowMore from "./pages/KnowMore";
 
+const SaveRoute = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    sessionStorage.setItem("lastVisitedRoute", location.pathname);
+  }, [location]);
+
+  return null;
+};
+
 export default function App() {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
     <BrowserRouter>
+      <SaveRoute />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
