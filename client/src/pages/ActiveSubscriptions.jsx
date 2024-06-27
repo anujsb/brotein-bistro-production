@@ -75,7 +75,7 @@ function ActiveSubscriptions() {
                 className=" rounded px-3 py-2"
               />
 
-              <img src="/public/search.svg" className="w-10 pr-5" />
+              <img src="/search.svg" className="w-10 pr-5" />
             </div>
             <div className="flex items-center justify-end">
               <input

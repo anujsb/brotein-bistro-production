@@ -54,15 +54,15 @@ const FeedbackForm = () => {
             onSubmit={handleSubmit}
             className="space-y-6 padding bg-white shadow-md rounded-lg mx-auto w-custom"
           >
-          <h1 className="text-2xl capitalize mb-2">
-            We would love to hear form you
-          </h1>
+            <h1 className="text-2xl capitalize mb-2">
+              We would love to hear form you
+            </h1>
             <div>
               <label
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-medium text-gray-700 mb-2 capitalize"
                 htmlFor="subscriptionPlan"
               >
-                Subscription Plan Selected:
+                select your subscribed plan
               </label>
               <select
                 id="subscriptionPlan"

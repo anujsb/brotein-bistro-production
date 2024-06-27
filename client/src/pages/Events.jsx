@@ -17,7 +17,7 @@ const Events = () => {
       <div className="pt-20 p-2 w-full border shadow-sm rounded-2xl flex flex-col justify-center items-center">
         <div className="text-center mb-8 ">
           <h1 className="text-4xl font-bold mb-2 capitalize">Our next event</h1>
-          <p className="text-xl mb-4"></p>
+          <p className="text-xl mb-4 capitalize">Stay tuned for a taste of what’s to come!</p>
           {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Join Us Today!
           </button> */}
