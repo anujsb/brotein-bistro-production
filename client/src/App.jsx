@@ -40,10 +40,13 @@ export default function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Save the current path to local storage before the user leaves the page
   useEffect(() => {
     const savePath = () => {
-      localStorage.setItem("lastPath", location.pathname);
+      try {
+        localStorage.setItem("lastPath", location.pathname);
+      } catch (error) {
+        console.error("Error saving to localStorage", error);
+      }
     };
 
     window.addEventListener("beforeunload", savePath);
@@ -53,11 +56,14 @@ export default function App() {
     };
   }, [location]);
 
-  // On page load, check if there's a stored path and redirect to it
   useEffect(() => {
-    const lastPath = localStorage.getItem("lastPath");
-    if (lastPath && lastPath !== "/") {
-      navigate(lastPath);
+    try {
+      const lastPath = localStorage.getItem("lastPath");
+      if (lastPath && lastPath !== "/") {
+        navigate(lastPath);
+      }
+    } catch (error) {
+      console.error("Error reading from localStorage", error);
     }
   }, [navigate]);
 
