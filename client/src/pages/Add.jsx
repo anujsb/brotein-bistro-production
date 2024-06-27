@@ -164,8 +164,7 @@ const Add = () => {
   return (
     <div className="grid md:grid-flow-col lg:grid-flow-col md:col-span-2 lg:col-span-2 border rounded-xl backdrop-blur-2xl">
       <SideBarAdmin />
-      <div className="pt-20 p-2 w-full">
-        {/* Upload Your Ads Here */}
+      <div className="pt-20 p-2 w-full ">
         <div className="p-6 rounded-xl border shadow-md w-full max-w-md m-2">
           <h2 className="text-2xl font-bold mb-4">Upload Your Ads Here</h2>
           <input

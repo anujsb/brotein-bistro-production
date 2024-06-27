@@ -21,7 +21,9 @@ const MealRecordDetails = () => {
 
   const fetchDetailsAndMealRecords = async () => {
     try {
-      const response = await axios.get(`https://brotein-bistro-01am.onrender.com/api/active/subs/${id}`);
+      const response = await axios.get(
+        `https://brotein-bistro-01am.onrender.com/api/active/subs/${id}`
+      );
       setSubscriptionDetails(response.data);
       setMeals(response.data.mealsTaken);
     } catch (error) {
@@ -35,9 +37,12 @@ const MealRecordDetails = () => {
 
   const handleUpdate = async (field, value) => {
     try {
-      await axios.patch(`https://brotein-bistro-01am.onrender.com/api/active/subs/${id}`, {
-        [field]: value,
-      });
+      await axios.patch(
+        `https://brotein-bistro-01am.onrender.com/api/active/subs/${id}`,
+        {
+          [field]: value,
+        }
+      );
       fetchDetailsAndMealRecords();
     } catch (error) {
       console.error(`Error updating ${field}:`, error);
@@ -46,10 +51,13 @@ const MealRecordDetails = () => {
 
   const handleDeleteMeal = async (mealRecordId) => {
     try {
-      await axios.post("https://brotein-bistro-01am.onrender.com/api/active/subs/deleteMeal/", {
-        username: subscriptionDetails.username,
-        mealRecordId,
-      });
+      await axios.post(
+        "https://brotein-bistro-01am.onrender.com/api/active/subs/deleteMeal/",
+        {
+          username: subscriptionDetails.username,
+          mealRecordId,
+        }
+      );
       fetchDetailsAndMealRecords();
     } catch (error) {
       console.error("Error deleting meal record:", error);
@@ -59,7 +67,7 @@ const MealRecordDetails = () => {
   return (
     <div className="grid md:grid-flow-col lg:grid-flow-col md:col-span-2 lg:col-span-2">
       <SideBarAdmin />
-      <div className="pt-20 p-2 w-full col-span-12">
+      <div className="pt-20 p-2 w-full md:col-span-12">
         <div className="container mx-auto p-4 pt-20">
           <h1 className="text-2xl font-bold mb-4">Meal Records</h1>
           <div className="bg-[#F6F6F6] rounded-lg border overflow-hidden p-6 mb-4">
