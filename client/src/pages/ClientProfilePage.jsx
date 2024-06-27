@@ -11,7 +11,9 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://brotein-bistro-01am.onrender.com/api/active/subs/users/${id}/meals`);
+        const response = await fetch(
+          `https://brotein-bistro-01am.onrender.com/api/active/subs/users/${id}/meals`
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error status: ${response.status}`);
@@ -51,30 +53,30 @@ const UserProfile = () => {
         <div className="text-center  glass shadow-lg p-6 rounded-2xl  border overflow-hidden">
           <h1 className="text-xl font-bold mb-4">User Profile</h1>
           <table className="w-full text-left mt-8">
-            <thead>
-              <tr className="bg-gray-100 dark:bg-gray-700">
-                <th className="px-4 py-2 font-semibold text-sm text-gray-500 dark:text-gray-400">
+            <thead className="rounded-2xl">
+              <tr className="bg-[#F6F6F6] rounded-2xl">
+                <th className="px-4 py-2 font-semibold text-sm text-gray-500 border-b border">
                   Details
                 </th>
-                <th className="px-4 py-2 font-semibold text-sm text-gray-500 dark:text-gray-400">
+                <th className="px-4 py-2 font-semibold text-sm text-gray-500 border-b border">
                   Value
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr className="border-b border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <tbody className="rounded-lg">
+              <tr className="border-b border hover:bg-[#F6F6F6]">
                 <td className="px-4 py-2">ID:</td>
                 <td>{userData.userId}</td>
               </tr>
-              <tr className="border-b border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <tr className="border-b border hover:bg-[#F6F6F6]">
                 <td className="px-4 py-2">Username:</td>
                 <td>{userData.username}</td>
               </tr>
-              <tr className="border-b border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <tr className="border-b border hover:bg-[#F6F6F6]">
                 <td className="px-4 py-2">Phone Number:</td>
                 <td>{userData.phoneNumber}</td>
               </tr>
-              <tr className="border-b border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <tr className="border-b border hover:bg-[#F6F6F6]">
                 <td className="px-4 py-2">Address:</td>
                 <td>{userData.address}</td>
               </tr>
