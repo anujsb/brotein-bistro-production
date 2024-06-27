@@ -1,5 +1,13 @@
 // App.jsx
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import SubscriptionseRequests from "./pages/SubscriptionseRequests";
@@ -29,6 +37,29 @@ import KnowMore from "./pages/KnowMore";
 
 export default function App() {
   const { currentUser } = useSelector((state) => state.user);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Save the current path to local storage before the user leaves the page
+  useEffect(() => {
+    const savePath = () => {
+      localStorage.setItem("lastPath", location.pathname);
+    };
+
+    window.addEventListener("beforeunload", savePath);
+
+    return () => {
+      window.removeEventListener("beforeunload", savePath);
+    };
+  }, [location]);
+
+  // On page load, check if there's a stored path and redirect to it
+  useEffect(() => {
+    const lastPath = localStorage.getItem("lastPath");
+    if (lastPath && lastPath !== "/") {
+      navigate(lastPath);
+    }
+  }, [navigate]);
 
   return (
     <BrowserRouter>
