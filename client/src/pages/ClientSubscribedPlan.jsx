@@ -11,7 +11,9 @@ const SubscribedPlan = () => {
   useEffect(() => {
     const fetchSubscriptionData = async () => {
       try {
-        const response = await fetch(`https://brotein-bistro-01am.onrender.com/api/active/subs/users/${id}/meals`);
+        const response = await fetch(
+          `https://brotein-bistro-01am.onrender.com/api/active/subs/users/${id}/meals`
+        );
 
         if (!response.ok) {
           const errorText = await response.text();
@@ -29,7 +31,9 @@ const SubscribedPlan = () => {
 
     const fetchLatestAdvertisement = async () => {
       try {
-        const response = await fetch("https://brotein-bistro-01am.onrender.com/api/ads/advertisements/latest");
+        const response = await fetch(
+          "https://brotein-bistro-01am.onrender.com/api/ads/advertisements/latest"
+        );
 
         if (!response.ok) {
           const errorText = await response.text();
