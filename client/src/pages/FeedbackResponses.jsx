@@ -46,7 +46,7 @@ function FeedbackFormResponse() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="grid md:grid-flow-col lg:grid-flow-col md:col-span-2 lg:col-span-2">
+    <div className="grid md:grid-flow-col lg:grid-flow-col md:col-span-2 lg:col-span-2 admin">
       <SideBarAdmin />
       <div className="pt-20 p-2 w-full">
         <div className="rounded-xl border">

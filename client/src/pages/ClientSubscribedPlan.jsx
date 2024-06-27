@@ -94,7 +94,7 @@ const SubscribedPlan = () => {
   }
 
   return (
-    <div className="grid md:grid-flow-col lg:grid-flow-col md:col-span-2 lg:col-span-2 bg-[#F6F6F6]">
+    <div className="grid md:grid-flow-col lg:grid-flow-col md:col-span-2 lg:col-span-2 bg-[#F6F6F6] ">
       <SideBarClient />
       <div className="pt-20 p-2 w-full">
         <div className="grid md:grid-flow-col lg:grid-flow-col md:grid-cols-4 lg:grid-cols-4 gap-2">
