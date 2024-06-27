@@ -1,6 +1,8 @@
 // HeroSection.jsx
 // import React from "react";
 
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div className="bg-gradient-to-r from-[#e6dada] to-white min-h-screen flex items-center">
@@ -16,12 +18,12 @@ const Home = () => {
               provides real-time updates and easy access to all your
               subscription details.
             </p>
-            <a
-              href="/sign-up"
+            <Link
+              to="/sign-up"
               className="bg-white  font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
             >
               Sign Up Now
-            </a>
+            </Link>
           </div>
           {/* <div className="lg:w-1/2">
             <img

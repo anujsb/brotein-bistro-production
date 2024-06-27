@@ -4,7 +4,7 @@ const Events = () => {
   return (
     <div className="grid md:grid-flow-col lg:grid-flow-col ">
       <SideBarClient />
-      <div className="pt-20 p-2 w-full col-span-12">
+      <div className="pt-20 p-2 w-full md:col-span-12">
         <div className="rounded-xl border p-2 w-full flex flex-col items-center">
           <h1 className="text-4xl">About Us</h1>
           <p className="text-xl">

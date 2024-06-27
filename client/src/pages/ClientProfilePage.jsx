@@ -47,7 +47,7 @@ const UserProfile = () => {
   return (
     <div className="grid md:grid-flow-col lg:grid-flow-col ">
       <SideBarClient />
-      <div className="flex items-center justify-center min-h-screen pt-20 p-2 w-full col-span-12">
+      <div className="flex items-center justify-center min-h-screen pt-20 p-2 w-full md:col-span-12">
         <div className="text-center  glass shadow-lg p-6 rounded-2xl  border overflow-hidden">
           <h1 className="text-xl font-bold mb-4">User Profile</h1>
           <table className="w-full text-left mt-8">

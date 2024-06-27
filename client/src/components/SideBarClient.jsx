@@ -53,7 +53,7 @@ const SideBarClient = () => {
       >
         <BsLayoutSidebarInset size={18} fill="#444" />
       </div>
-      <ul className="flex md:flex-col lg:flex-col sm:flex-row w-full ">
+      <ul className="flex md:flex-col lg:flex-col sm:flex-row w-full  justify-center">
         <li>
           <button
             // to="/subscriptionse-requests"
@@ -64,7 +64,9 @@ const SideBarClient = () => {
             )} flex `}
           >
             <img alt="requests" className="w-6 mr-4" src="/dash.svg" />
-            {expanded && showText && <p className="duration-300">Dashboard</p>}
+            {expanded && showText && (
+              <p className="duration-300 hidden sm:block">Dashboard</p>
+            )}
           </button>
         </li>
         <li>
@@ -73,13 +75,15 @@ const SideBarClient = () => {
             className={`${getLinkClasses("/feedback-from")} flex`}
           >
             <img alt="requests" className="w-6 mr-4" src="/feedback.svg" />
-            {expanded && showText && <p>Feedback</p>}
+            {expanded && showText && (
+              <p className="hidden sm:block">Feedback</p>
+            )}
           </Link>
         </li>
         <li>
           <Link to="/events" className={`${getLinkClasses("/events")} flex`}>
             <img alt="requests" className="w-6 mr-4" src="/events.svg" />
-            {expanded && showText && <p>Events</p>}
+            {expanded && showText && <p className="hidden sm:block">Events</p>}
           </Link>
         </li>
         <li>
@@ -88,7 +92,9 @@ const SideBarClient = () => {
             className={`${getLinkClasses("/know-more")} flex`}
           >
             <img alt="requests" className="w-6 mr-4" src="/knowmore.svg" />
-            {expanded && showText && <p className="">Know More</p>}
+            {expanded && showText && (
+              <p className="hidden sm:block">Know More</p>
+            )}
           </Link>
         </li>
         <li>
@@ -102,7 +108,9 @@ const SideBarClient = () => {
             // className={`${getLinkClasses("/feedback-responses")} flex`}
           >
             <img alt="requests" className="w-6 mr-4" src="/user.svg" />
-            {expanded && showText && <p>user details</p>}
+            {expanded && showText && (
+              <p className="hidden sm:block">user details</p>
+            )}
           </button>
         </li>
       </ul>
