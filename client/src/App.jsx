@@ -1,12 +1,5 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
-import { useEffect } from "react";
+// App.jsx
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import SubscriptionseRequests from "./pages/SubscriptionseRequests";
@@ -36,35 +29,6 @@ import KnowMore from "./pages/KnowMore";
 
 export default function App() {
   const { currentUser } = useSelector((state) => state.user);
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const savePath = () => {
-      try {
-        localStorage.setItem("lastPath", location.pathname);
-      } catch (error) {
-        console.error("Error saving to localStorage", error);
-      }
-    };
-
-    window.addEventListener("beforeunload", savePath);
-
-    return () => {
-      window.removeEventListener("beforeunload", savePath);
-    };
-  }, [location]);
-
-  useEffect(() => {
-    try {
-      const lastPath = localStorage.getItem("lastPath");
-      if (lastPath && lastPath !== "/") {
-        navigate(lastPath);
-      }
-    } catch (error) {
-      console.error("Error reading from localStorage", error);
-    }
-  }, [navigate]);
 
   return (
     <BrowserRouter>
