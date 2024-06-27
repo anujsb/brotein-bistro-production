@@ -174,7 +174,7 @@ const SubscribedPlan = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white p-2 rounded-2xl h-fit">
+          <div className="bg-white p-2 rounded-2xl h-fit flex items-center justify-center">
             {advertisement && (
               <img
                 alt="advertisement"

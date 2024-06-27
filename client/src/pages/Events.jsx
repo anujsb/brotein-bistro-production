@@ -14,15 +14,10 @@ const Events = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <SideBarClient />
-      <div className="pt-20 p-2 w-full">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-2">
-            Healthy Weight Loss/Gain/Maintenance
-          </h1>
-          <p className="text-xl mb-4">
-            About majorly eating right food (not referring to vegetables &
-            fruits only) and not compromising on your taste buds.
-          </p>
+      <div className="pt-20 p-2 w-full border shadow-sm rounded-2xl flex flex-col justify-center items-center">
+        <div className="text-center mb-8 ">
+          <h1 className="text-4xl font-bold mb-2 capitalize">Our next event</h1>
+          <p className="text-xl mb-4"></p>
           {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Join Us Today!
           </button> */}
@@ -30,7 +25,7 @@ const Events = () => {
         {events.map((event) => (
           <div
             key={event._id}
-            className="max-w-sm rounded overflow-hidden shadow-lg m-2 bg-white"
+            className="max-w-sm rounded-xl overflow-hidden  p-2 bg-[#EFFCEF] border shadow-sm "
           >
             <img
               className="w-full"

@@ -54,6 +54,9 @@ const FeedbackForm = () => {
             onSubmit={handleSubmit}
             className="space-y-6 padding bg-white shadow-md rounded-lg mx-auto w-custom"
           >
+          <h1 className="text-2xl capitalize mb-2">
+            We would love to hear form you
+          </h1>
             <div>
               <label
                 className="block text-sm font-medium text-gray-700 mb-2"

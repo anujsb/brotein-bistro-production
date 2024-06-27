@@ -28,7 +28,9 @@ const Add = () => {
 
   const fetchAdvertisements = async () => {
     try {
-      const response = await fetch("https://brotein-bistro-01am.onrender.com/api/ads/advertisements");
+      const response = await fetch(
+        "https://brotein-bistro-01am.onrender.com/api/ads/advertisements"
+      );
       const data = await response.json();
       setAdvertisements(data);
     } catch (error) {
@@ -38,7 +40,9 @@ const Add = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch("https://brotein-bistro-01am.onrender.com/api/events/getAllevents"); // Adjust the endpoint as needed
+      const response = await fetch(
+        "https://brotein-bistro-01am.onrender.com/api/events/getAllevents"
+      ); // Adjust the endpoint as needed
       const data = await response.json();
       setEvents(data);
     } catch (error) {
@@ -139,7 +143,9 @@ const Add = () => {
   const handleDelete = async (id, type) => {
     try {
       const response = await fetch(
-        `https://brotein-bistro-01am.onrender.com/api/${type === "ad" ? "ads/advertisements" : "events/events"}/${id}`,
+        `https://brotein-bistro-01am.onrender.com/api/${
+          type === "ad" ? "ads/advertisements" : "events/events"
+        }/${id}`,
         {
           method: "DELETE",
         }
