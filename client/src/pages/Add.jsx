@@ -165,143 +165,149 @@ const Add = () => {
     <div className="grid md:grid-flow-col lg:grid-flow-col md:col-span-2 lg:col-span-2 border rounded-xl backdrop-blur-2xl">
       <SideBarAdmin />
       <div className="pt-20 p-2 w-full ">
-        <div className="p-6 rounded-xl border shadow-md w-full max-w-md m-2">
-          <h2 className="text-2xl font-bold mb-4">Upload Your Ads Here</h2>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => handleImageChange(e, "ad")}
-            className="mb-4"
-          />
-          {adPreview && (
-            <img
-              src={adPreview}
-              alt="Preview"
-              className="w-full h-auto mb-4 rounded"
+        <div className="flex flex-row">
+          <div className="p-10 rounded-xl border shadow-md w-full max-w-md m-2">
+            <h2 className="text-2xl font-bold mb-4">Upload Your Ads Here</h2>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => handleImageChange(e, "ad")}
+              className="mb-4"
             />
-          )}
-          {adImage && (
-            <div>
-              <p className="text-sm text-gray-500">
-                Selected file: {adImage.name}
-              </p>
-            </div>
-          )}
-          <button
-            className="button"
-            onClick={() => handleSubmit("ad")}
-            disabled={isLoading}
-          >
-            {isLoading ? "Uploading..." : "Upload Ad"}
-          </button>
-          {isSuccess && <p className="text-green-600 mt-2">Ad Uploaded!</p>}
-        </div>
+            {adPreview && (
+              <img
+                src={adPreview}
+                alt="Preview"
+                className="w-full h-auto mb-4 rounded"
+              />
+            )}
+            {adImage && (
+              <div>
+                <p className="text-sm text-gray-500">
+                  Selected file: {adImage.name}
+                </p>
+              </div>
+            )}
+            <button
+              className="button"
+              onClick={() => handleSubmit("ad")}
+              disabled={isLoading}
+            >
+              {isLoading ? "Uploading..." : "Upload Ad"}
+            </button>
+            {isSuccess && <p className="text-green-600 mt-2">Ad Uploaded!</p>}
+          </div>
 
-        {/* Upload Your Event Poster Here */}
-        <div className="p-6 rounded-xl border shadow-md w-full max-w-md m-2">
-          <h2 className="text-2xl font-bold mb-4">
-            Upload Your Event Poster Here
-          </h2>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => handleImageChange(e, "event")}
-            className="mb-4"
-          />
-          {eventPreview && (
-            <img
-              src={eventPreview}
-              alt="Preview"
-              className="w-full h-auto mb-4 rounded"
+          {/* Upload Your Event Poster Here */}
+          <div className="p-6 rounded-xl border shadow-md w-full max-w-md m-2">
+            <h2 className="text-2xl font-bold mb-4">
+              Upload Your Event Poster Here
+            </h2>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => handleImageChange(e, "event")}
+              className="mb-4"
             />
-          )}
-          {eventImage && (
-            <div>
-              <p className="text-sm text-gray-500">
-                Selected file: {eventImage.name}
-              </p>
-            </div>
-          )}
-          <input
-            type="text"
-            value={eventName}
-            onChange={(e) => setEventName(e.target.value)}
-            placeholder="Event Name"
-            className="my-4 border rounded-md p-2 w-full"
-          />
-          <input
-            type="date"
-            value={eventDate}
-            onChange={(e) => setEventDate(e.target.value)}
-            className="my-4 border rounded-md p-2 w-full"
-          />
-          <input
-            type="text"
-            value={eventLocation}
-            onChange={(e) => setEventLocation(e.target.value)}
-            placeholder="Event Location"
-            className="my-4 border rounded-md p-2 w-full"
-          />
-          <button
-            className="button m-2"
-            onClick={() => handleSubmit("event")}
-            disabled={isLoading}
-          >
-            {isLoading ? "Uploading..." : "Upload Event"}
-          </button>
-          {isSuccess && <p className="text-green-600 mt-2">Event Uploaded!</p>}
-        </div>
-      </div>
-      <div className="mt-8 m-2">
-        <h3 className="text-lg font-semibold mb-4">Previously Uploaded Ads</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {advertisements.map((ad) => (
-            <div
-              key={ad._id}
-              className="border p-4 rounded overflow-hidden shadow-md"
-            >
+            {eventPreview && (
               <img
-                src={ad.imageUrl}
-                alt="Ad"
-                className="w-full h-48 object-cover mb-2 rounded"
+                src={eventPreview}
+                alt="Preview"
+                className="w-full h-auto mb-4 rounded"
               />
-              <p>{ad.addText}</p>
-              <button
-                className="button"
-                onClick={() => handleDelete(ad._id, "ad")}
-              >
-                Delete
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mt-8 m-2">
-        <h3 className="text-lg font-semibold mb-4">
-          Previously Uploaded Events
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {events.map((event) => (
-            <div
-              key={event._id}
-              className="border p-4 rounded overflow-hidden shadow-md"
+            )}
+            {eventImage && (
+              <div>
+                <p className="text-sm text-gray-500">
+                  Selected file: {eventImage.name}
+                </p>
+              </div>
+            )}
+            <input
+              type="text"
+              value={eventName}
+              onChange={(e) => setEventName(e.target.value)}
+              placeholder="Event Name"
+              className="my-4 border rounded-md p-2 w-full"
+            />
+            <input
+              type="date"
+              value={eventDate}
+              onChange={(e) => setEventDate(e.target.value)}
+              className="my-4 border rounded-md p-2 w-full"
+            />
+            <input
+              type="text"
+              value={eventLocation}
+              onChange={(e) => setEventLocation(e.target.value)}
+              placeholder="Event Location"
+              className="my-4 border rounded-md p-2 w-full"
+            />
+            <button
+              className="button m-2"
+              onClick={() => handleSubmit("event")}
+              disabled={isLoading}
             >
-              <img
-                src={event.eventPoster}
-                alt="Event"
-                className="w-full h-48 object-cover mb-2 rounded"
-              />
-              <p className="font-semibold">{event.eventName}</p>
-              <p>{new Date(event.eventDate).toLocaleDateString()}</p>
-              <p>{event.eventLocation}</p>
-              <button
-                className="button"
-                onClick={() => handleDelete(event._id, "event")}
+              {isLoading ? "Uploading..." : "Upload Event"}
+            </button>
+            {isSuccess && (
+              <p className="text-green-600 mt-2">Event Uploaded!</p>
+            )}
+          </div>
+        </div>
+        <div className="mt-8 m-2">
+          <h3 className="text-lg font-semibold mb-4">
+            Previously Uploaded Ads
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {advertisements.map((ad) => (
+              <div
+                key={ad._id}
+                className="border p-4 rounded overflow-hidden shadow-md"
               >
-                Delete
-              </button>
-            </div>
-          ))}
+                <img
+                  src={ad.imageUrl}
+                  alt="Ad"
+                  className="w-full h-48 object-cover mb-2 rounded"
+                />
+                <p>{ad.addText}</p>
+                <button
+                  className="button"
+                  onClick={() => handleDelete(ad._id, "ad")}
+                >
+                  Delete
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-8 m-2">
+          <h3 className="text-lg font-semibold mb-4">
+            Previously Uploaded Events
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {events.map((event) => (
+              <div
+                key={event._id}
+                className="border p-4 rounded overflow-hidden shadow-md"
+              >
+                <img
+                  src={event.eventPoster}
+                  alt="Event"
+                  className="w-full h-48 object-cover mb-2 rounded"
+                />
+                <p className="font-semibold">{event.eventName}</p>
+                <p>{new Date(event.eventDate).toLocaleDateString()}</p>
+                <p>{event.eventLocation}</p>
+                <button
+                  className="button"
+                  onClick={() => handleDelete(event._id, "event")}
+                >
+                  Delete
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
