@@ -11,7 +11,7 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/api/active/subs/users/${id}/meals`);
+        const response = await fetch(`https://brotein-bistro-01am.onrender.com/api/active/subs/users/${id}/meals`);
 
         if (!response.ok) {
           throw new Error(`HTTP error status: ${response.status}`);
