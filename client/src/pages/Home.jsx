@@ -18,11 +18,18 @@ const Home = () => {
               provides real-time updates and easy access to all your
               subscription details.
             </p>
+
             <Link
               to="/sign-up"
-              className="bg-white  font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
+              className="bg-white m-2  font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
             >
               Sign Up Now
+            </Link>
+            <Link
+              to="/plansdetails"
+              className="bg-white m-2 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
+            >
+              See Plans
             </Link>
           </div>
           {/* <div className="lg:w-1/2">

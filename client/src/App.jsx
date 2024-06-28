@@ -26,6 +26,7 @@ import FeedbackResponses from "./pages/FeedbackResponses";
 import Wait from "./pages/Wait";
 import Events from "./pages/Events";
 import KnowMore from "./pages/KnowMore";
+import PlansDetails from "./pages/PlansDetails";
 
 export default function App() {
   const { currentUser } = useSelector((state) => state.user);
@@ -35,6 +36,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/plansdetails" element={<PlansDetails />} />
         <Route path="/not-found" element={<NotFoundPage />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />

@@ -24,13 +24,16 @@ export default function SignIn() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch("https://brotein-bistro-production.vercel.app/api/auth/signin", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://brotein-bistro-production.vercel.app/api/auth/signin",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data));
@@ -47,7 +50,7 @@ export default function SignIn() {
       } else if (updatedUser.isActiveSubscriber) {
         navigate(`/user-subscribed-plan/${updatedUser._id}`);
       } else {
-        navigate("/questionnaire");
+        navigate("/plans");
       }
     } catch (error) {
       dispatch(signInFailure(error));
@@ -61,7 +64,7 @@ export default function SignIn() {
       } else if (currentUser.isActiveSubscriber) {
         navigate(`/user-subscribed-plan/${currentUser._id}`);
       } else {
-        navigate("/questionnaire");
+        navigate("/plans");
       }
     }
   }, [currentUser, navigate]);

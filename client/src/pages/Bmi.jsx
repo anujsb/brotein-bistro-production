@@ -91,7 +91,7 @@ const Bmi = () => {
           {bmi && (
             <div className="">
               <h2 className="text-xl ">Your results:</h2>
-            
+
               <p className="bg-bmi p-36 text-center text-2xl font-bold">
                 BMI: {bmi}
               </p>
@@ -118,8 +118,8 @@ const Bmi = () => {
             <h1 className="mb-2 text-xl mr-2 ">
               See Plans Best Fitted For You:
             </h1>
-            <Link to="/Plans" className="button">
-              go to plans
+            <Link to="/sign-up" className="button">
+              Sign Up
             </Link>
           </div>
 
