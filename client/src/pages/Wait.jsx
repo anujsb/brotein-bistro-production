@@ -10,7 +10,7 @@ const Wait = () => {
 
   const handleSignOut = async () => {
     try {
-      await fetch("https://brotein-bistro-01am.onrender.com/api/auth/signout");
+      await fetch("https://brotein-bistro-production.vercel.app/api/auth/signout");
       dispatch(signOut());
     } catch (error) {
       console.log(error);

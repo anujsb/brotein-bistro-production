@@ -12,7 +12,7 @@ const SubscribedPlan = () => {
     const fetchSubscriptionData = async () => {
       try {
         const response = await fetch(
-          `https://brotein-bistro-01am.onrender.com/api/active/subs/users/${id}/meals`
+          `https://brotein-bistro-production.vercel.app/api/active/subs/users/${id}/meals`
         );
 
         if (!response.ok) {
@@ -32,7 +32,7 @@ const SubscribedPlan = () => {
     const fetchLatestAdvertisement = async () => {
       try {
         const response = await fetch(
-          "https://brotein-bistro-01am.onrender.com/api/ads/advertisements/latest"
+          "https://brotein-bistro-production.vercel.app/api/ads/advertisements/latest"
         );
 
         if (!response.ok) {

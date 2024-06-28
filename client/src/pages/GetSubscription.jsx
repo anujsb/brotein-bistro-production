@@ -36,7 +36,7 @@ const SubscriptionPage = () => {
     setLoading(true);
     setError(false);
     try {
-      const response = await fetch("https://brotein-bistro-01am.onrender.com/api/subs/subscriptions", {
+      const response = await fetch("https://brotein-bistro-production.vercel.app/api/subs/subscriptions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

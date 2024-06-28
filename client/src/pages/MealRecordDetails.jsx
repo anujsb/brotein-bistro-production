@@ -22,7 +22,7 @@ const MealRecordDetails = () => {
   const fetchDetailsAndMealRecords = async () => {
     try {
       const response = await axios.get(
-        `https://brotein-bistro-01am.onrender.com/api/active/subs/${id}`
+        `https://brotein-bistro-production.vercel.app/api/active/subs/${id}`
       );
       setSubscriptionDetails(response.data);
       setMeals(response.data.mealsTaken);
@@ -38,7 +38,7 @@ const MealRecordDetails = () => {
   const handleUpdate = async (field, value) => {
     try {
       await axios.patch(
-        `https://brotein-bistro-01am.onrender.com/api/active/subs/${id}`,
+        `https://brotein-bistro-production.vercel.app/api/active/subs/${id}`,
         {
           [field]: value,
         }
@@ -52,7 +52,7 @@ const MealRecordDetails = () => {
   const handleDeleteMeal = async (mealRecordId) => {
     try {
       await axios.post(
-        "https://brotein-bistro-01am.onrender.com/api/active/subs/deleteMeal/",
+        "https://brotein-bistro-production.vercel.app/api/active/subs/deleteMeal/",
         {
           username: subscriptionDetails.username,
           mealRecordId,

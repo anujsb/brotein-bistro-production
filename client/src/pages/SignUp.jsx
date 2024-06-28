@@ -16,7 +16,7 @@ export default function SignUp() {
     try {
       setLoading(true);
       setError(false);
-      const res = await fetch("https://brotein-bistro-01am.onrender.com/api/auth/signup", {
+      const res = await fetch("https://brotein-bistro-production.vercel.app/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

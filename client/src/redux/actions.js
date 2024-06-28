@@ -6,7 +6,7 @@ export const checkActiveSubscription =
   (userId) => async (dispatch, getState) => {
     try {
       const response = await axios.get(
-        `https://brotein-bistro-01am.onrender.com/api/active/subs/getAllActiveSubs`
+        `https://brotein-bistro-production.vercel.app/api/active/subs/getAllActiveSubs`
       );
       const activeSubscribers = response.data;
 

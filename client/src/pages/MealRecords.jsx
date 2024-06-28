@@ -9,7 +9,7 @@ const MealRecords = () => {
   useEffect(() => {
     const fetchSubscriptions = async () => {
       try {
-        const response = await axios.get("https://brotein-bistro-01am.onrender.com/api/active/subs/getAllActiveSubs");
+        const response = await axios.get("https://brotein-bistro-production.vercel.app/api/active/subs/getAllActiveSubs");
         if (response.data && Array.isArray(response.data)) {
           setSubscriptions(response.data);
         } else {

@@ -34,7 +34,7 @@ const FeedbackForm = () => {
     try {
       // Send the feedback data to the backend
       const response = await axios.post(
-        "https://brotein-bistro-01am.onrender.com/api/feedback/give/feedback",
+        "https://brotein-bistro-production.vercel.app/api/feedback/give/feedback",
         feedbackData
       );
 

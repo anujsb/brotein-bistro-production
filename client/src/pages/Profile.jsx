@@ -64,7 +64,7 @@ export default function Profile() {
     try {
       dispatch(updateUserStart());
       const res = await fetch(
-        `https://brotein-bistro-01am.onrender.com/api/user/update/${currentUser._id}`,
+        `https://brotein-bistro-production.vercel.app/api/user/update/${currentUser._id}`,
         {
           method: "POST",
           headers: {
@@ -89,7 +89,7 @@ export default function Profile() {
     try {
       dispatch(deleteUserStart());
       const res = await fetch(
-        `https://brotein-bistro-01am.onrender.com/api/user/delete/${currentUser._id}`,
+        `https://brotein-bistro-production.vercel.app/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
         }
@@ -107,7 +107,7 @@ export default function Profile() {
 
   const handleSignOut = async () => {
     try {
-      await fetch("https://brotein-bistro-01am.onrender.com/api/auth/signout");
+      await fetch("https://brotein-bistro-production.vercel.app/api/auth/signout");
       dispatch(signOut());
     } catch (error) {
       console.log(error);

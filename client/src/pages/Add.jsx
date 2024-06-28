@@ -29,7 +29,7 @@ const Add = () => {
   const fetchAdvertisements = async () => {
     try {
       const response = await fetch(
-        "https://brotein-bistro-01am.onrender.com/api/ads/advertisements"
+        "https://brotein-bistro-production.vercel.app/api/ads/advertisements"
       );
       const data = await response.json();
       setAdvertisements(data);
@@ -41,7 +41,7 @@ const Add = () => {
   const fetchEvents = async () => {
     try {
       const response = await fetch(
-        "https://brotein-bistro-01am.onrender.com/api/events/getAllevents"
+        "https://brotein-bistro-production.vercel.app/api/events/getAllevents"
       ); // Adjust the endpoint as needed
       const data = await response.json();
       setEvents(data);
@@ -112,7 +112,7 @@ const Add = () => {
                 };
 
           const response = await fetch(
-            `https://brotein-bistro-01am.onrender.com/api/${
+            `https://brotein-bistro-production.vercel.app/api/${
               type === "ad" ? "ads/advertisements" : "events/createevent"
             }`,
             {
@@ -143,7 +143,7 @@ const Add = () => {
   const handleDelete = async (id, type) => {
     try {
       const response = await fetch(
-        `https://brotein-bistro-01am.onrender.com/api/${
+        `https://brotein-bistro-production.vercel.app/api/${
           type === "ad" ? "ads/advertisements" : "events/events"
         }/${id}`,
         {

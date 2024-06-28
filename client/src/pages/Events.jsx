@@ -5,7 +5,7 @@ const Events = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("https://brotein-bistro-01am.onrender.com/api/events/getAllevents")
+    fetch("https://brotein-bistro-production.vercel.app/api/events/getAllevents")
       .then((response) => response.json())
       .then((data) => setEvents(data.reverse()));
   }, []);

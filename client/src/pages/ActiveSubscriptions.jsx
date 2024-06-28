@@ -14,7 +14,7 @@ function ActiveSubscriptions() {
   useEffect(() => {
     const fetchActiveSubscriptions = async () => {
       try {
-        const response = await axios.get("https://brotein-bistro-01am.onrender.com/api/active/subs/getAllActiveSubs");
+        const response = await axios.get("https://brotein-bistro-production.vercel.app/api/active/subs/getAllActiveSubs");
         setActiveSubscriptions(response.data);
       } catch (error) {
         console.error("Error fetching active subscriptions:", error);
@@ -45,7 +45,7 @@ function ActiveSubscriptions() {
   const handleAdminRecordMeal = async (subscription) => {
     try {
       const response = await axios.post(
-        `https://brotein-bistro-01am.onrender.com/api/active/subs/admin/recordMeal/${subscription.username}`,
+        `https://brotein-bistro-production.vercel.app/api/active/subs/admin/recordMeal/${subscription.username}`,
         {
           username: subscription.username,
           selectedPlan: subscription.selectedPlan,
