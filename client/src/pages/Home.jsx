@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="bg-gradient-to-r from-[#e6dada] to-white min-h-screen flex items-center">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col items-center justify-between">
           <div className="lg:w-2/3 mb-10 lg:mb-0 ">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
@@ -21,13 +21,13 @@ const Home = () => {
 
             <Link
               to="/sign-up"
-              className="bg-white m-2  font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
+              className="bg-white m-2  font-semibold py-3 px-2 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
             >
               Sign Up Now
             </Link>
             <Link
               to="/plansdetails"
-              className="bg-white m-2 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
+              className="bg-white m-2 font-semibold py-3 px-2 rounded-lg shadow-md hover:bg-gray-200 transition duration-300"
             >
               See Plans
             </Link>
