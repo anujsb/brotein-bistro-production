@@ -36,13 +36,16 @@ const SubscriptionPage = () => {
     setLoading(true);
     setError(false);
     try {
-      const response = await fetch("https://brotein-bistro-production.vercel.app/api/subs/subscriptions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://brotein-bistro-production.vercel.app/api/subs/subscriptions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await response.json();
       setLoading(false);
       if (response.ok) {
@@ -130,8 +133,8 @@ const SubscriptionPage = () => {
           className="w-full p-2 mb-4 border border-gray-300 rounded"
         >
           <option value="">Select Branch</option>
-          <option value="nashik-1">Nashik-1</option>
-          <option value="nashik-2">Nashik-2</option>
+          <option value="nashik-1">ABS GYM (College Road Nashik)</option>
+          <option value="nashik-2">City Centre Mall Nashik</option>
         </select>
         <button type="submit" className="button">
           Submit
