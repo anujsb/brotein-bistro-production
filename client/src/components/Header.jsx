@@ -21,7 +21,7 @@ export default function Header() {
     <div className="w-screen max-h-20  fixed grid grid-flow-col z-20">
       <div className="flex justify-start items-center">
         <Link to="/">
-          <img src="/logo.png" alt="logo" className="h-10 max-h-16 m-1" />
+          <img src="/logo.png" alt="logo" className="h-20 max-h-16 m-1" />
         </Link>
       </div>
       <div className="flex justify-end">
