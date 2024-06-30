@@ -10,7 +10,7 @@ const Home = () => {
         <div className="flex flex-col items-center justify-between">
           <div className="lg:w-2/3 mb-10 lg:mb-0 ">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Simplify Your Meal Plans with Our SaaS Platform
+              Simplify Your Meal Plans with Our Software Platform
             </h1>
             <p className="text-xl mb-6">
               Manage your meal subscriptions effortlessly, keep track of meals,
