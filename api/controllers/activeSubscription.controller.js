@@ -237,7 +237,7 @@ export const getMealRecordsByUserId = async (req, res) => {
     const subscriptions = await ActiveSubscription.find({ userId });
     const mealRecords = subscriptions.map(async (subscription) => {
       // Calculate DaysLeft and total meals for each subscription
-      const DaysLeft = calculateDaysLeft(subscription.startDate);
+      const daysLeft = calculateDaysLeft(subscription.startDate);
       const totalMealsOfThatPlan = getInitialMeals(subscription.selectedPlan); // Total meals for the selected plan
 
       // Ensure mealsTaken is an array to avoid errors
@@ -252,7 +252,7 @@ export const getMealRecordsByUserId = async (req, res) => {
       return {
         ...subscription.toObject(),
         mealsTaken: subscription.mealsTaken, // Explicitly include mealsTaken in the returned object
-        DaysLeft, // Include DaysLeft in the response
+        daysLeft, // Include daysLeft in the response
         totalMealsLeft, // Include total meals left in the response
         totalMealsOfThatPlan, // Include total meals of that plan in the response
       };
@@ -265,7 +265,6 @@ export const getMealRecordsByUserId = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
 // Function to get count of all active subscriptions
 export const getCountOfActiveSubscriptions = async (req, res) => {
   try {

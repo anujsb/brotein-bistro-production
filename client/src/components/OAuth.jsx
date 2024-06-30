@@ -1,12 +1,15 @@
+import { useState, useEffect } from "react";
 import { GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
 import { app } from "../firebase";
-import { useDispatch } from "react-redux";
-import { signInSuccess } from "../redux/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { signInSuccess, signInFailure } from "../redux/user/userSlice";
+import { checkActiveSubscription } from "../redux/actions";
 import { useNavigate } from "react-router-dom";
 
 export default function OAuth() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const currentUser = useSelector((state) => state.user.currentUser);
 
   const handleGoogleClick = async () => {
     try {
@@ -30,20 +33,39 @@ export default function OAuth() {
       );
 
       const data = await res.json();
-      console.log(data);
+      if (data.success === false) {
+        dispatch(signInFailure(data));
+        return;
+      }
       dispatch(signInSuccess(data));
-      navigate("/plans");
+
+      const updatedUser = await dispatch(checkActiveSubscription(data._id));
+
+      if (updatedUser.isActiveSubscriber) {
+        navigate(`/user-subscribed-plan/${updatedUser._id}`);
+      } else {
+        navigate("/plans");
+      }
     } catch (error) {
-      console.log("Could not login with Google", error);
+      dispatch(signInFailure(error));
     }
   };
 
+  useEffect(() => {
+    if (currentUser) {
+      if (currentUser.isActiveSubscriber) {
+        navigate(`/user-subscribed-plan/${currentUser._id}`);
+      } else {
+        navigate("/plans");
+      }
+    }
+  }, [currentUser, navigate]);
+
   return (
-    // <div className=" ">
     <button
       type="button"
       onClick={handleGoogleClick}
-      className="w-full p-2 border border-gray-300 shadow-sm rounded-md mt-1 flex items-center   px-6 py-2 text-sm font-medium hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+      className="w-full p-2 border border-gray-300 shadow-sm rounded-md mt-1 flex items-center px-6 py-2 text-sm font-medium hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
     >
       <svg
         className="h-6 w-6 mr-2"
@@ -92,6 +114,5 @@ export default function OAuth() {
       </svg>
       <span>Continue with Google</span>
     </button>
-    // </div>
   );
 }

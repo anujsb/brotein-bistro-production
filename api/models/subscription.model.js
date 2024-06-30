@@ -4,7 +4,7 @@ const subscriptionSchema = new mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User', // Reference the User model
+      ref: "User", // Reference the User model
       required: true,
     },
     username: {
@@ -28,7 +28,7 @@ const subscriptionSchema = new mongoose.Schema(
         "Premium",
         "Platinum",
         "150 Grams Protein Source",
-        "200 Grams Protein Source"
+        "200 Grams Protein Source",
       ],
       required: true,
     },
@@ -38,7 +38,6 @@ const subscriptionSchema = new mongoose.Schema(
     },
     selectedBranch: {
       type: String,
-      enum: ["nashik-1", "nashik-2"],
       required: true,
     },
   },
